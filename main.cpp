@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "IntBinaryTree.h"
+#include "IntBinaryTree.cpp"
 using namespace std;
 
 void search();
@@ -18,8 +18,6 @@ int main() {
         cout << "File open failure" << endl;
         return 0;
     }
-
-
     // Fills tree
     while (!fin){
         string value;
@@ -64,21 +62,29 @@ int main() {
 
 void search(){
     string userNode;
-    cout << "Find node: " << endl;
+    cout << "Find node: ";
     cin >> userNode;
+
 
     if(tree.searchNode(userNode)){cout << "Node found" << endl;}
     else{cout << "Node not found" << endl;}
 }
 
 void modify(){
-    tree.
+    string newNode;
+    string removeNode;
+    cout << "Node to be modified: ";
+    cin >> removeNode;
+    cout << "Updated node";
+    cin >> newNode;
 
+    tree.remove(removeNode);
+    tree.insertNode(newNode);
 }
 
 void remove(){
     string userNode;
-    cout << "Input node to be removed: " << endl;
+    cout << "Input node to be removed: ";
     cin >> userNode;
 
     tree.remove(userNode);
@@ -86,7 +92,7 @@ void remove(){
 
 void add(){
     string userNode;
-    cout << "Input new node: " << endl;
+    cout << "Input new node: ";
     cin >> userNode;
 
     tree.insertNode(userNode);
