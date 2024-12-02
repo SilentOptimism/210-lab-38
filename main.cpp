@@ -19,14 +19,16 @@ int main() {
         return 0;
     }
     // Fills tree
-    while (!fin){
+    while (fin){
         string value;
         getline(fin, value);
-        if(!fin){tree.insertNode(value);}
+        if(fin){tree.insertNode(value);}
     }
+
 
     int input = -1;
     while (input != 5){
+        cout << endl;
         cout << "Records" << endl;
         cout << endl;
         cout << "1) Add" << endl;
@@ -36,7 +38,7 @@ int main() {
         cout << "5) exit" << endl;
         cout << endl;
 
-        cout << "Enter menu option (1 - 5) :" << endl;
+        cout << "Enter menu option (1-5):";
         cin >> input;
 
         switch (input){
