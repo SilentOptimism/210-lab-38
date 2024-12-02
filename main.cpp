@@ -3,21 +3,25 @@
 #include "IntBinaryTree.cpp"
 using namespace std;
 
+// Function headers
 void search();
 void modify();
 void remove();
 void add();
 
+// The records
 IntBinaryTree tree;
 
 int main() {
     ifstream fin;
     fin.open("codes.txt");
 
+    // Checks for file errors
     if(!fin){
         cout << "File open failure" << endl;
         return 0;
     }
+
     // Fills tree
     while (fin){
         string value;
@@ -25,8 +29,11 @@ int main() {
         if(fin){tree.insertNode(value);}
     }
 
+    fin.close();
 
     int input = -1;
+
+    // Processes user input
     while (input != 5){
         cout << endl;
         cout << "Records" << endl;
@@ -38,7 +45,7 @@ int main() {
         cout << "5) exit" << endl;
         cout << endl;
 
-        cout << "Enter menu option (1-5):";
+        cout << "(1-5) Enter menu option : ";
         cin >> input;
 
         switch (input){
